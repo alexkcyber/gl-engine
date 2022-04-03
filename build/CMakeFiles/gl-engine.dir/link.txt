@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/gl-engine.dir/gl-engine.cpp.o -o gl-engine  /usr/lib/libglfw.so.3.3 /usr/lib/libGLX.so /usr/lib/libOpenGL.so 

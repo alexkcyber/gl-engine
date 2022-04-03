@@ -1,0 +1,3 @@
+/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles/gl-engine.dir
+/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles/edit_cache.dir
+/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles/rebuild_cache.dir

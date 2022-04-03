@@ -1,2 +1,2 @@
 # gl-engine
-Graphics engine using OpenGL 
+Graphics engine using OpenGL
