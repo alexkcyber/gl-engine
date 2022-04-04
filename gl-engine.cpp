@@ -32,12 +32,18 @@ int main(void) {
     // END INIT GLAD --------------------------------------
 
     float vertices[] = {
-        -0.5, -0.5, 0.0f,
-        0.5f, -0.5, 0.0f,
-        0.0f, 0.5f, 0.0f
+        -0.5, -0.5, 0.0f, 1.0f, 0.0f, 0.0f,
+        0.5f, -0.5, 0.0f, 0.0f, 1.0f, 0.0f,
+        0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
+        -1.0f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f
     };
 
-    unsigned int VAO, VBO;
+    unsigned int indices[] {
+        0, 1, 2,
+        3, 2, 0
+    };
+
+    unsigned int VAO, VBO, IBO;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
@@ -46,8 +52,16 @@ int main(void) {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     glBindVertexArray(VAO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*3, (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)0);
     glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,
+            sizeof(float)*6, (void*)(sizeof(float)*3));
+    glEnableVertexAttribArray(1);
+
+    glGenBuffers(1, &IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+            sizeof(indices), indices, GL_STATIC_DRAW);
 
     Shader shader;
     shader.loadShaders("src/shaders/basic.vert", "src/shaders/basic.frag");
@@ -58,7 +72,8 @@ int main(void) {
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        //glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
