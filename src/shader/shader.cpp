@@ -23,6 +23,14 @@ void Shader::linkProgram() {
     }
 }
 
+// Sets a 4x4 uniform matrix in the shader
+// uniName: String name of uniform
+// matrix: 4x4 matrix
+void Shader::setUniformM4(const char* uniName, glm::mat4 &matrix) {
+    glUniformMatrix4fv(glGetUniformLocation(shaderProgram, uniName),
+            1, GL_FALSE, &matrix[0][0]);
+}
+
 // Tell OpenGL to use shaderProgram
 void Shader::useProgram() {
     glUseProgram(shaderProgram);

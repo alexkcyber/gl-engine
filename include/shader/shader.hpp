@@ -13,6 +13,11 @@ class Shader {
         // fPath: fragment shader path
         void loadShaders(const char* vPath, const char* fPath);
 
+        // Sets a 4x4 uniform matrix in the shader
+        // uniName: String name of uniform
+        // matrix: 4x4 matrix
+        void setUniformM4(const char* uniName, glm::mat4 &matrix);
+
 
         // Link all of the shaders loaded into shaderProgram
         void linkProgram();

@@ -1,5 +1,7 @@
 #include "include/shader/shader.hpp"
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include "include/glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -32,15 +34,33 @@ int main(void) {
     // END INIT GLAD --------------------------------------
 
     float vertices[] = {
-        -0.5, -0.5, 0.0f, 1.0f, 0.0f, 0.0f,
-        0.5f, -0.5, 0.0f, 0.0f, 1.0f, 0.0f,
-        0.0f, 0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
-        -1.0f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f
+
+        // Vertices             // Colors
+        -0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,
+        0.5f, -0.5f, -0.5f,     0.0f, 1.0f, 0.0f,
+        0.5f, 0.5f, -0.5f,      0.0f, 0.0f, 1.0f,
+        -0.5f, 0.5f, -0.5f,     1.0f, 0.0f, 0.0f,
+        0.5f, 0.5f, 0.5f,       0.0f, 1.0f, 0.0f,
+        0.5f, -0.5f, 0.5f,      0.0f, 0.0f, 1.0f,
+        -0.5f, 0.5f, 0.5f,      1.0f, 0.0f, 0.0f,
+        -0.5f, -0.5f, 0.5f,     0.0f, 1.0f, 0.0f
+
     };
 
     unsigned int indices[] {
+        // Triangle indices
         0, 1, 2,
-        3, 2, 0
+        0, 2, 3,
+        1, 2, 4,
+        1, 4, 5,
+        5, 4, 6,
+        5, 6, 7,
+        7, 0, 6,
+        6, 3, 0,
+        2, 6, 3,
+        2, 6, 4,
+        0, 5, 1,
+        0, 5, 7
     };
 
     unsigned int VAO, VBO, IBO;
@@ -64,16 +84,30 @@ int main(void) {
             sizeof(indices), indices, GL_STATIC_DRAW);
 
     Shader shader;
-    shader.loadShaders("src/shaders/basic.vert", "src/shaders/basic.frag");
+    shader.loadShaders("../src/shaders/basic.vert", "../src/shaders/basic.frag");
     shader.linkProgram();
     shader.useProgram();
 
+    glm::mat4 projection, view, model = glm::mat4(1.0f);
 
+    projection = glm::perspective(glm::radians(45.0f),
+            (float)g_screenWidth/(float)g_screenHeight, 0.1f, 100.0f);
+    shader.setUniformM4("projection", projection);
+
+    glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 5.0f);
+    glm::vec3 cameraForward = glm::vec3(0.0f, 0.0f, -1.0f);
+    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+    view = glm::lookAt(cameraPos, cameraPos + cameraForward, cameraUp);
+    shader.setUniformM4("view", view);
+
+    model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 1.0f, 0.0f));
+    shader.setUniformM4("model", model);
+
+    glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+        glDrawElements(GL_TRIANGLES, 3*12, GL_UNSIGNED_INT, nullptr);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

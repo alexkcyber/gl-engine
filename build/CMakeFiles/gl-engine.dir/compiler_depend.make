@@ -359,6 +359,58 @@ CMakeFiles/gl-engine.dir/gl-engine.cpp.o: ../gl-engine.cpp \
   /usr/include/glm/detail/func_integer.inl \
   ../include/glad/glad.h \
   /usr/include/KHR/khrplatform.h \
+  /usr/include/glm/gtc/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_projection.hpp \
+  /usr/include/glm/gtc/constants.hpp \
+  /usr/include/glm/ext/scalar_constants.hpp \
+  /usr/include/glm/ext/scalar_constants.inl \
+  /usr/include/glm/gtc/constants.inl \
+  /usr/include/glm/ext/matrix_projection.inl \
+  /usr/include/glm/ext/matrix_clip_space.hpp \
+  /usr/include/glm/ext/matrix_clip_space.inl \
+  /usr/include/glm/ext/matrix_transform.hpp \
+  /usr/include/glm/ext/matrix_transform.inl \
+  /usr/include/glm/gtc/matrix_transform.inl \
+  /usr/include/glm/gtc/type_ptr.hpp \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/c++/11.2.0/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/glm/gtc/type_ptr.inl \
   ../include/glad/glad.h \
   /usr/include/GLFW/glfw3.h
 
@@ -796,15 +848,61 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
   /usr/include/c++/11.2.0/bits/sstream.tcc
 
 
-/usr/include/c++/11.2.0/bits/fstream.tcc:
-
 /usr/include/c++/11.2.0/fstream:
 
 ../src/shader/shader.cpp:
 
+/usr/include/GLFW/glfw3.h:
+
 /usr/include/string.h:
 
-/usr/include/GLFW/glfw3.h:
+/usr/include/glm/ext/vector_uint1.hpp:
+
+/usr/include/glm/ext/vector_int1.hpp:
+
+/usr/include/glm/ext/vector_double1.hpp:
+
+/usr/include/c++/11.2.0/bits/fstream.tcc:
+
+/usr/include/glm/ext/vector_float1_precision.hpp:
+
+/usr/include/glm/ext/vector_bool1.hpp:
+
+/usr/include/glm/gtc/epsilon.inl:
+
+/usr/include/glm/ext/quaternion_transform.inl:
+
+/usr/include/glm/ext/quaternion_transform.hpp:
+
+/usr/include/glm/ext/quaternion_trigonometric.inl:
+
+/usr/include/c++/11.2.0/cstring:
+
+/usr/include/glm/ext/quaternion_trigonometric.hpp:
+
+/usr/include/glm/ext/quaternion_double.hpp:
+
+/usr/include/glm/ext/quaternion_relational.inl:
+
+/usr/include/glm/detail/type_quat.hpp:
+
+/usr/include/glm/ext/quaternion_geometric.inl:
+
+/usr/include/glm/gtc/quaternion.hpp:
+
+/usr/include/glm/gtc/type_ptr.hpp:
+
+/usr/include/glm/ext/matrix_transform.hpp:
+
+/usr/include/glm/ext/matrix_clip_space.hpp:
+
+/usr/include/glm/ext/matrix_projection.inl:
+
+/usr/include/glm/gtc/constants.inl:
+
+/usr/include/glm/ext/scalar_constants.inl:
+
+/usr/include/glm/ext/matrix_projection.hpp:
 
 /usr/include/glm/integer.hpp:
 
@@ -828,6 +926,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/glm/detail/func_vector_relational.inl:
 
+/usr/include/glm/detail/type_float.hpp:
+
 /usr/include/glm/vector_relational.hpp:
 
 /usr/include/glm/geometric.hpp:
@@ -838,11 +938,15 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/glm/ext/matrix_float4x4.hpp:
 
+/usr/include/glm/ext/quaternion_common.inl:
+
 /usr/include/glm/ext/matrix_double4x4_precision.hpp:
 
 /usr/include/glm/detail/type_mat4x4.inl:
 
 /usr/include/glm/ext/matrix_double4x4.hpp:
+
+/usr/include/glm/ext/quaternion_float.hpp:
 
 /usr/include/glm/mat4x4.hpp:
 
@@ -866,6 +970,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/glm/ext/matrix_float3x4_precision.hpp:
 
+/usr/include/glm/ext/quaternion_geometric.hpp:
+
 /usr/include/glm/ext/matrix_float3x4.hpp:
 
 /usr/include/glm/ext/matrix_double3x4_precision.hpp:
@@ -875,6 +981,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 /usr/include/glm/mat3x4.hpp:
 
 /usr/include/glm/ext/matrix_float3x3_precision.hpp:
+
+/usr/include/glm/ext/matrix_transform.inl:
 
 /usr/include/glm/ext/matrix_float3x3.hpp:
 
@@ -968,6 +1076,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/bits/setjmp.h:
 
+/usr/include/glm/ext/vector_int1_sized.hpp:
+
 /usr/include/c++/11.2.0/clocale:
 
 /usr/include/glm/fwd.hpp:
@@ -1005,6 +1115,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 /usr/include/time.h:
 
 /usr/include/bits/types/struct_timespec.h:
+
+/usr/include/glm/gtc/quaternion.inl:
 
 /usr/include/pthread.h:
 
@@ -1053,6 +1165,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 /usr/include/glm/detail/type_mat2x2.hpp:
 
 /usr/include/bits/types.h:
+
+/usr/include/glm/ext/vector_float1.hpp:
 
 /usr/include/bits/wctype-wchar.h:
 
@@ -1118,9 +1232,13 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 ../gl-engine.cpp:
 
+/usr/include/glm/gtc/epsilon.hpp:
+
 /usr/include/glm/ext/matrix_float2x2_precision.hpp:
 
 /usr/include/stdc-predef.h:
+
+/usr/include/glm/ext/vector_uint1_sized.hpp:
 
 /usr/include/glm/ext/vector_float2.hpp:
 
@@ -1168,6 +1286,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/bits/local_lim.h:
 
+/usr/include/glm/detail/type_quat.inl:
+
 /usr/include/c++/11.2.0/backward/binders.h:
 
 /usr/include/c++/11.2.0/x86_64-pc-linux-gnu/bits/c++config.h:
@@ -1188,6 +1308,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/bits/wordsize.h:
 
+/usr/include/glm/gtc/constants.hpp:
+
 /usr/include/c++/11.2.0/ios:
 
 /usr/include/c++/11.2.0/bits/nested_exception.h:
@@ -1196,7 +1318,11 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/bits/mathcalls-narrow.h:
 
+/usr/include/glm/gtc/vec1.hpp:
+
 /usr/include/c++/11.2.0/bits/cpp_type_traits.h:
+
+/usr/include/glm/gtc/matrix_transform.hpp:
 
 /usr/include/glm/simd/platform.h:
 
@@ -1212,6 +1338,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/c++/11.2.0/bits/exception_ptr.h:
 
+/usr/include/glm/ext/vector_bool1_precision.hpp:
+
 /usr/include/bits/pthreadtypes.h:
 
 /usr/include/c++/11.2.0/iosfwd:
@@ -1224,9 +1352,13 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/c++/11.2.0/bits/locale_facets.h:
 
+/usr/include/glm/ext/quaternion_double_precision.hpp:
+
 /usr/include/c++/11.2.0/tr1/riemann_zeta.tcc:
 
 /usr/include/bits/types/locale_t.h:
+
+/usr/include/glm/ext/vector_double1_precision.hpp:
 
 /usr/include/glm/ext/vector_int3.hpp:
 
@@ -1265,6 +1397,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 /usr/include/bits/wchar.h:
 
 /usr/include/bits/waitstatus.h:
+
+/usr/include/glm/ext/vector_relational.inl:
 
 /usr/include/c++/11.2.0/bits/stl_pair.h:
 
@@ -1330,6 +1464,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/bits/types/struct_FILE.h:
 
+/usr/include/glm/ext/vector_relational.hpp:
+
 /usr/include/glm/ext/vector_float2_precision.hpp:
 
 /usr/include/glm/exponential.hpp:
@@ -1384,6 +1520,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/c++/11.2.0/bits/locale_facets.tcc:
 
+/usr/include/glm/ext/quaternion_float_precision.hpp:
+
 /usr/include/glm/ext/vector_double3.hpp:
 
 /usr/include/bits/thread-shared-types.h:
@@ -1416,6 +1554,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/bits/iscanonical.h:
 
+/usr/include/glm/gtc/type_ptr.inl:
+
 /usr/include/glm/ext/matrix_double4x2.hpp:
 
 /usr/include/c++/11.2.0/bits/specfun.h:
@@ -1433,6 +1573,8 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 /usr/include/c++/11.2.0/bits/stl_function.h:
 
 /usr/include/glm/ext/vector_bool3.hpp:
+
+/usr/include/glm/ext/quaternion_relational.hpp:
 
 /usr/include/glm/ext/matrix_double2x4_precision.hpp:
 
@@ -1456,13 +1598,19 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 
 /usr/include/c++/11.2.0/tr1/legendre_function.tcc:
 
+/usr/include/glm/ext/scalar_constants.hpp:
+
 /usr/include/c++/11.2.0/tr1/poly_laguerre.tcc:
+
+/usr/include/glm/ext/matrix_clip_space.inl:
 
 /usr/include/glm/detail/setup.hpp:
 
 /usr/include/glm/vec2.hpp:
 
 /usr/include/c++/11.2.0/cassert:
+
+/usr/include/glm/gtc/matrix_transform.inl:
 
 /usr/include/glm/detail/type_mat2x3.hpp:
 
@@ -1533,5 +1681,7 @@ CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp \
 /usr/include/glm/detail/type_vec3.inl:
 
 /usr/include/glm/ext/vector_float3_precision.hpp:
+
+/usr/include/glm/ext/quaternion_common.hpp:
 
 /usr/include/glm/ext/vector_double3_precision.hpp:
