@@ -1,37 +1,33 @@
 #include <GLFW/glfw3.h>
 
-int main(void)
-{
+// BEGIN GLOBAL VARIABLES -----------------------------------------------------
+unsigned int g_screenWidth = 1400, g_screenHeight = 800;
+const char* g_appName = "OpenGL Graphics";
+// END GLOBAL VARIABLES -------------------------------------------------------
+
+// BEGIN MAIN FUNCTION --------------------------------------------------------
+int main(void) {
+
+    // BEGIN INIT GLFW WINDOW -----------------------------
     GLFWwindow* window;
-
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
-
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
-    if (!window)
-    {
+    if (!glfwInit()) { return -1; }
+    window = glfwCreateWindow(
+            g_screenWidth, g_screenHeight, g_appName, NULL, NULL);
+    if (!window) {
         glfwTerminate();
         return -1;
     }
-
-    /* Make the window's context current */
     glfwMakeContextCurrent(window);
+    // END INIT GLFW WINDOW -------------------------------
 
-    /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
-    {
-        /* Render here */
+    while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        /* Swap front and back buffers */
         glfwSwapBuffers(window);
-
-        /* Poll for and process events */
         glfwPollEvents();
     }
 
     glfwTerminate();
     return 0;
 }
+// END MAIN FUNCTION ----------------------------------------------------------
