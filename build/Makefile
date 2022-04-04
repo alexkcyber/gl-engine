@@ -153,6 +153,30 @@ gl-engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/gl-engine.cpp.s
 .PHONY : gl-engine.cpp.s
 
+src/glad.o: src/glad.c.o
+.PHONY : src/glad.o
+
+# target to build an object file
+src/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad.c.o
+.PHONY : src/glad.c.o
+
+src/glad.i: src/glad.c.i
+.PHONY : src/glad.i
+
+# target to preprocess a source file
+src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad.c.i
+.PHONY : src/glad.c.i
+
+src/glad.s: src/glad.c.s
+.PHONY : src/glad.s
+
+# target to generate assembly for a file
+src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad.c.s
+.PHONY : src/glad.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... gl-engine.o"
 	@echo "... gl-engine.i"
 	@echo "... gl-engine.s"
+	@echo "... src/glad.o"
+	@echo "... src/glad.i"
+	@echo "... src/glad.s"
 .PHONY : help
 
 

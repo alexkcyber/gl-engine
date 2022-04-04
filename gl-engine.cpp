@@ -1,4 +1,6 @@
+#include "include/glad/glad.h"
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 // BEGIN GLOBAL VARIABLES -----------------------------------------------------
 unsigned int g_screenWidth = 1400, g_screenHeight = 800;
@@ -19,6 +21,13 @@ int main(void) {
     }
     glfwMakeContextCurrent(window);
     // END INIT GLFW WINDOW -------------------------------
+
+    // BEGIN INIT GLAD ------------------------------------
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+        std::cout << "Failed to initialize GLAD" << std::endl;
+        return -1;
+    }
+    // END INIT GLAD --------------------------------------
 
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
