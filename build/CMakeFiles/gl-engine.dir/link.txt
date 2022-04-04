@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/gl-engine.dir/gl-engine.cpp.o CMakeFiles/gl-engine.dir/src/glad.c.o -o gl-engine  /usr/lib/libglfw.so.3.3 /usr/lib/libGLX.so /usr/lib/libOpenGL.so 
+/usr/bin/c++ CMakeFiles/gl-engine.dir/gl-engine.cpp.o CMakeFiles/gl-engine.dir/src/glad/glad.c.o CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o -o gl-engine  /usr/lib/libglfw.so.3.3 /usr/lib/libGLX.so /usr/lib/libOpenGL.so 

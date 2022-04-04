@@ -153,29 +153,53 @@ gl-engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/gl-engine.cpp.s
 .PHONY : gl-engine.cpp.s
 
-src/glad.o: src/glad.c.o
-.PHONY : src/glad.o
+src/glad/glad.o: src/glad/glad.c.o
+.PHONY : src/glad/glad.o
 
 # target to build an object file
-src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad.c.o
-.PHONY : src/glad.c.o
+src/glad/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad/glad.c.o
+.PHONY : src/glad/glad.c.o
 
-src/glad.i: src/glad.c.i
-.PHONY : src/glad.i
+src/glad/glad.i: src/glad/glad.c.i
+.PHONY : src/glad/glad.i
 
 # target to preprocess a source file
-src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad.c.i
-.PHONY : src/glad.c.i
+src/glad/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad/glad.c.i
+.PHONY : src/glad/glad.c.i
 
-src/glad.s: src/glad.c.s
-.PHONY : src/glad.s
+src/glad/glad.s: src/glad/glad.c.s
+.PHONY : src/glad/glad.s
 
 # target to generate assembly for a file
-src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad.c.s
-.PHONY : src/glad.c.s
+src/glad/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad/glad.c.s
+.PHONY : src/glad/glad.c.s
+
+src/shader/shader.o: src/shader/shader.cpp.o
+.PHONY : src/shader/shader.o
+
+# target to build an object file
+src/shader/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o
+.PHONY : src/shader/shader.cpp.o
+
+src/shader/shader.i: src/shader/shader.cpp.i
+.PHONY : src/shader/shader.i
+
+# target to preprocess a source file
+src/shader/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/shader/shader.cpp.i
+.PHONY : src/shader/shader.cpp.i
+
+src/shader/shader.s: src/shader/shader.cpp.s
+.PHONY : src/shader/shader.s
+
+# target to generate assembly for a file
+src/shader/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/shader/shader.cpp.s
+.PHONY : src/shader/shader.cpp.s
 
 # Help Target
 help:
@@ -189,9 +213,12 @@ help:
 	@echo "... gl-engine.o"
 	@echo "... gl-engine.i"
 	@echo "... gl-engine.s"
-	@echo "... src/glad.o"
-	@echo "... src/glad.i"
-	@echo "... src/glad.s"
+	@echo "... src/glad/glad.o"
+	@echo "... src/glad/glad.i"
+	@echo "... src/glad/glad.s"
+	@echo "... src/shader/shader.o"
+	@echo "... src/shader/shader.i"
+	@echo "... src/shader/shader.s"
 .PHONY : help
 
 

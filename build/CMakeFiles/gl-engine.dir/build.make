@@ -83,36 +83,52 @@ CMakeFiles/gl-engine.dir/gl-engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gl-engine.dir/gl-engine.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/fun/3d-graphics/cpp/gl-engine/gl-engine.cpp -o CMakeFiles/gl-engine.dir/gl-engine.cpp.s
 
-CMakeFiles/gl-engine.dir/src/glad.c.o: CMakeFiles/gl-engine.dir/flags.make
-CMakeFiles/gl-engine.dir/src/glad.c.o: ../src/glad.c
-CMakeFiles/gl-engine.dir/src/glad.c.o: CMakeFiles/gl-engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/gl-engine.dir/src/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gl-engine.dir/src/glad.c.o -MF CMakeFiles/gl-engine.dir/src/glad.c.o.d -o CMakeFiles/gl-engine.dir/src/glad.c.o -c /home/alex/fun/3d-graphics/cpp/gl-engine/src/glad.c
+CMakeFiles/gl-engine.dir/src/glad/glad.c.o: CMakeFiles/gl-engine.dir/flags.make
+CMakeFiles/gl-engine.dir/src/glad/glad.c.o: ../src/glad/glad.c
+CMakeFiles/gl-engine.dir/src/glad/glad.c.o: CMakeFiles/gl-engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/gl-engine.dir/src/glad/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/gl-engine.dir/src/glad/glad.c.o -MF CMakeFiles/gl-engine.dir/src/glad/glad.c.o.d -o CMakeFiles/gl-engine.dir/src/glad/glad.c.o -c /home/alex/fun/3d-graphics/cpp/gl-engine/src/glad/glad.c
 
-CMakeFiles/gl-engine.dir/src/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gl-engine.dir/src/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alex/fun/3d-graphics/cpp/gl-engine/src/glad.c > CMakeFiles/gl-engine.dir/src/glad.c.i
+CMakeFiles/gl-engine.dir/src/glad/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/gl-engine.dir/src/glad/glad.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/alex/fun/3d-graphics/cpp/gl-engine/src/glad/glad.c > CMakeFiles/gl-engine.dir/src/glad/glad.c.i
 
-CMakeFiles/gl-engine.dir/src/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gl-engine.dir/src/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alex/fun/3d-graphics/cpp/gl-engine/src/glad.c -o CMakeFiles/gl-engine.dir/src/glad.c.s
+CMakeFiles/gl-engine.dir/src/glad/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/gl-engine.dir/src/glad/glad.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/alex/fun/3d-graphics/cpp/gl-engine/src/glad/glad.c -o CMakeFiles/gl-engine.dir/src/glad/glad.c.s
+
+CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: CMakeFiles/gl-engine.dir/flags.make
+CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: ../src/shader/shader.cpp
+CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o: CMakeFiles/gl-engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o -MF CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o.d -o CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o -c /home/alex/fun/3d-graphics/cpp/gl-engine/src/shader/shader.cpp
+
+CMakeFiles/gl-engine.dir/src/shader/shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gl-engine.dir/src/shader/shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex/fun/3d-graphics/cpp/gl-engine/src/shader/shader.cpp > CMakeFiles/gl-engine.dir/src/shader/shader.cpp.i
+
+CMakeFiles/gl-engine.dir/src/shader/shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gl-engine.dir/src/shader/shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex/fun/3d-graphics/cpp/gl-engine/src/shader/shader.cpp -o CMakeFiles/gl-engine.dir/src/shader/shader.cpp.s
 
 # Object files for target gl-engine
 gl__engine_OBJECTS = \
 "CMakeFiles/gl-engine.dir/gl-engine.cpp.o" \
-"CMakeFiles/gl-engine.dir/src/glad.c.o"
+"CMakeFiles/gl-engine.dir/src/glad/glad.c.o" \
+"CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o"
 
 # External object files for target gl-engine
 gl__engine_EXTERNAL_OBJECTS =
 
 gl-engine: CMakeFiles/gl-engine.dir/gl-engine.cpp.o
-gl-engine: CMakeFiles/gl-engine.dir/src/glad.c.o
+gl-engine: CMakeFiles/gl-engine.dir/src/glad/glad.c.o
+gl-engine: CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o
 gl-engine: CMakeFiles/gl-engine.dir/build.make
 gl-engine: /usr/lib/libglfw.so.3.3
 gl-engine: /usr/lib/libGLX.so
 gl-engine: /usr/lib/libOpenGL.so
 gl-engine: CMakeFiles/gl-engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable gl-engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable gl-engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gl-engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

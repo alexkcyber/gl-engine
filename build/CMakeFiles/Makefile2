@@ -81,12 +81,12 @@ clean: CMakeFiles/gl-engine.dir/clean
 CMakeFiles/gl-engine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=1,2,3 "Built target gl-engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles --progress-num=1,2,3,4 "Built target gl-engine"
 .PHONY : CMakeFiles/gl-engine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gl-engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/gl-engine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alex/fun/3d-graphics/cpp/gl-engine/build/CMakeFiles 0
 .PHONY : CMakeFiles/gl-engine.dir/rule

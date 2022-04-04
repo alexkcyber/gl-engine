@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/alex/fun/3d-graphics/cpp/gl-engine/src/glad.c" "CMakeFiles/gl-engine.dir/src/glad.c.o" "gcc" "CMakeFiles/gl-engine.dir/src/glad.c.o.d"
+  "/home/alex/fun/3d-graphics/cpp/gl-engine/src/glad/glad.c" "CMakeFiles/gl-engine.dir/src/glad/glad.c.o" "gcc" "CMakeFiles/gl-engine.dir/src/glad/glad.c.o.d"
   "/home/alex/fun/3d-graphics/cpp/gl-engine/gl-engine.cpp" "CMakeFiles/gl-engine.dir/gl-engine.cpp.o" "gcc" "CMakeFiles/gl-engine.dir/gl-engine.cpp.o.d"
+  "/home/alex/fun/3d-graphics/cpp/gl-engine/src/shader/shader.cpp" "CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o" "gcc" "CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o.d"
   )
 
 # Targets to which this target links.
