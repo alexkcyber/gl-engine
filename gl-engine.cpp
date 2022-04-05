@@ -1,3 +1,4 @@
+#include "include/file/stb_image.h"
 #include "include/lights/dirlight.hpp"
 #include "include/shader/shader.hpp"
 #include <glm/glm.hpp>
@@ -17,6 +18,10 @@ glm::vec3 g_cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 float g_deltaTime, g_lastFrame = 0.0f;
 // END GLOBAL VARIABLES -------------------------------------------------------
+
+// BEING FUNCTION PROTOTYPES --------------------------------------------------
+unsigned int loadTexture(char const* path);
+// END FUNCTION PROTOTYPES ----------------------------------------------------
 
 // BEGIN MAIN FUNCTION --------------------------------------------------------
 int main(void) {
@@ -127,6 +132,9 @@ int main(void) {
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,
             sizeof(float)*8, (void*)(sizeof(float)*3));
     glEnableVertexAttribArray(1);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE,
+            sizeof(float)*8, (void*)(sizeof(float)*6));
+    glEnableVertexAttribArray(2);
 
     glGenBuffers(1, &IBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
@@ -148,13 +156,18 @@ int main(void) {
     DirLight light01;
     // END OBJECTS IN THE SCENE ---------------------------
 
+    unsigned int diffuseMap = loadTexture("../../container2.png");
+    unsigned int specularMap = loadTexture("../../container2_specular.png");
+
+    shader.setUniformI1("material.diffuse", 0);
+    shader.setUniformI1("material.specular", 1);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, diffuseMap);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, specularMap);
+
     shader.setUniformV3("viewPos", g_cameraPos);
-    glm::vec3 ambientLight = glm::vec3(0.0215f, 0.1745f, 0.0215f);
-    shader.setUniformV3("material.ambient", ambientLight);
-    glm::vec3 diffuse = glm::vec3(0.07568f, 0.61424f, 0.07568f);
-    shader.setUniformV3("material.diffuse", diffuse);
-    glm::vec3 specular = glm::vec3(0.633f, 0.727811f, 0.633f);
-    shader.setUniformV3("material.specular", specular);
     shader.setUniformF1("material.shininess", 32.0f);
 
     shader.setUniformV3("dirLight.direction", light01.direction);
@@ -173,7 +186,7 @@ int main(void) {
         view = glm::lookAt(g_cameraPos, g_cameraPos + g_cameraForward, g_cameraUp);
         shader.setUniformM4("view", view);
 
-        model = glm::rotate(model, glm::radians(50.0f * g_deltaTime), glm::vec3(1.0f, 0.5f, 0.5f));
+        model = glm::rotate(model, glm::radians(40.0f * g_deltaTime), glm::vec3(1.0f, 0.5f, 0.5f));
         shader.setUniformM4("model", model);
 
         //glDrawElements(GL_TRIANGLES, 3*12, GL_UNSIGNED_INT, nullptr);
@@ -187,3 +200,38 @@ int main(void) {
     return 0;
 }
 // END MAIN FUNCTION ----------------------------------------------------------
+
+unsigned int loadTexture(char const * path) {
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    int width, height, nrComponents;
+    unsigned char *data = stbi_load(path, &width, &height, &nrComponents, 0);
+    if (data)
+    {
+        GLenum format;
+        if (nrComponents == 1)
+            format = GL_RED;
+        else if (nrComponents == 3)
+            format = GL_RGB;
+        else if (nrComponents == 4)
+            format = GL_RGBA;
+
+        glBindTexture(GL_TEXTURE_2D, textureID);
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        stbi_image_free(data);
+    }
+    else
+    {
+        std::cout << "Texture failed to load at path: " << path << std::endl;
+        stbi_image_free(data);
+    }
+
+    return textureID;
+}

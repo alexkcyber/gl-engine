@@ -28,6 +28,11 @@ class Shader {
         // f: float number
         void setUniformF1(const char* uniName, float f);
 
+        // Sets an int uniform in the shader
+        // uniName: String name of uniform
+        // i: int number
+        void setUniformI1(const char* uniName, int i);
+
         // Link all of the shaders loaded into shaderProgram
         void linkProgram();
 

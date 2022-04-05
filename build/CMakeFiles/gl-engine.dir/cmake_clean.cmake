@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gl-engine.dir/gl-engine.cpp.o"
   "CMakeFiles/gl-engine.dir/gl-engine.cpp.o.d"
+  "CMakeFiles/gl-engine.dir/src/file/stb_image.cpp.o"
+  "CMakeFiles/gl-engine.dir/src/file/stb_image.cpp.o.d"
   "CMakeFiles/gl-engine.dir/src/glad/glad.c.o"
   "CMakeFiles/gl-engine.dir/src/glad/glad.c.o.d"
   "CMakeFiles/gl-engine.dir/src/lights/dirlight.cpp.o"

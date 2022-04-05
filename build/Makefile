@@ -153,6 +153,30 @@ gl-engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/gl-engine.cpp.s
 .PHONY : gl-engine.cpp.s
 
+src/file/stb_image.o: src/file/stb_image.cpp.o
+.PHONY : src/file/stb_image.o
+
+# target to build an object file
+src/file/stb_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/file/stb_image.cpp.o
+.PHONY : src/file/stb_image.cpp.o
+
+src/file/stb_image.i: src/file/stb_image.cpp.i
+.PHONY : src/file/stb_image.i
+
+# target to preprocess a source file
+src/file/stb_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/file/stb_image.cpp.i
+.PHONY : src/file/stb_image.cpp.i
+
+src/file/stb_image.s: src/file/stb_image.cpp.s
+.PHONY : src/file/stb_image.s
+
+# target to generate assembly for a file
+src/file/stb_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/file/stb_image.cpp.s
+.PHONY : src/file/stb_image.cpp.s
+
 src/glad/glad.o: src/glad/glad.c.o
 .PHONY : src/glad/glad.o
 
@@ -237,6 +261,9 @@ help:
 	@echo "... gl-engine.o"
 	@echo "... gl-engine.i"
 	@echo "... gl-engine.s"
+	@echo "... src/file/stb_image.o"
+	@echo "... src/file/stb_image.i"
+	@echo "... src/file/stb_image.s"
 	@echo "... src/glad/glad.o"
 	@echo "... src/glad/glad.i"
 	@echo "... src/glad/glad.s"

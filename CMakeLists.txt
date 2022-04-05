@@ -11,7 +11,8 @@ add_executable(gl-engine
 	gl-engine.cpp
 	src/glad/glad.c
 	src/shader/shader.cpp
-	src/lights/dirlight.cpp)
+	src/lights/dirlight.cpp
+	src/file/stb_image.cpp)
 
 find_package(glfw3 3.3 REQUIRED)
 target_link_libraries(gl-engine glfw)

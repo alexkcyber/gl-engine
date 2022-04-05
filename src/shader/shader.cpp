@@ -45,6 +45,13 @@ void Shader::setUniformF1(const char* uniName, float f) {
     glUniform1f(glGetUniformLocation(shaderProgram, uniName), f);
 }
 
+// Sets an int uniform in the shader
+// uniName: String name of uniform
+// i: int number
+void Shader::setUniformI1(const char* uniName, int i) {
+    glUniform1i(glGetUniformLocation(shaderProgram, uniName), i);
+}
+
 // Tell OpenGL to use shaderProgram
 void Shader::useProgram() {
     glUseProgram(shaderProgram);
