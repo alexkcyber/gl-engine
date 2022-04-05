@@ -31,6 +31,20 @@ void Shader::setUniformM4(const char* uniName, glm::mat4 &matrix) {
             1, GL_FALSE, &matrix[0][0]);
 }
 
+// Sets a vec3 uniform in the shader
+// uniName: String name of uniform
+// vec: a vector 3
+void Shader::setUniformV3(const char* uniName, glm::vec3 &vec) {
+    glUniform3fv(glGetUniformLocation(shaderProgram, uniName), 1, &vec[0]);
+}
+
+// Sets a float uniform in the shader
+// uniName: String name of uniform
+// f: float number
+void Shader::setUniformF1(const char* uniName, float f) {
+    glUniform1f(glGetUniformLocation(shaderProgram, uniName), f);
+}
+
 // Tell OpenGL to use shaderProgram
 void Shader::useProgram() {
     glUseProgram(shaderProgram);

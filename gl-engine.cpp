@@ -1,3 +1,4 @@
+#include "include/lights/dirlight.hpp"
 #include "include/shader/shader.hpp"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -9,6 +10,12 @@
 // BEGIN GLOBAL VARIABLES -----------------------------------------------------
 unsigned int g_screenWidth = 1400, g_screenHeight = 800;
 const char* g_appName = "OpenGL Graphics";
+
+glm::vec3 g_cameraPos = glm::vec3(0.0f, 0.0f, 5.0f);
+glm::vec3 g_cameraForward = glm::vec3(0.0f, 0.0f, -1.0f);
+glm::vec3 g_cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
+float g_deltaTime, g_lastFrame = 0.0f;
 // END GLOBAL VARIABLES -------------------------------------------------------
 
 // BEGIN MAIN FUNCTION --------------------------------------------------------
@@ -35,7 +42,8 @@ int main(void) {
 
     float vertices[] = {
 
-        // Vertices             // Colors
+        /*
+        // Vertices             // Normals
         -0.5f, -0.5f, -0.5f,    1.0f, 0.0f, 0.0f,
         0.5f, -0.5f, -0.5f,     0.0f, 1.0f, 0.0f,
         0.5f, 0.5f, -0.5f,      0.0f, 0.0f, 1.0f,
@@ -43,8 +51,50 @@ int main(void) {
         0.5f, 0.5f, 0.5f,       0.0f, 1.0f, 0.0f,
         0.5f, -0.5f, 0.5f,      0.0f, 0.0f, 1.0f,
         -0.5f, 0.5f, 0.5f,      1.0f, 0.0f, 0.0f,
-        -0.5f, -0.5f, 0.5f,     0.0f, 1.0f, 0.0f
+        -0.5f, -0.5f, 0.5f,     0.0f, 1.0f, 0.0f*/
 
+        // Points               // Normals              // Texture Coords
+        -0.5f, -0.5f, -0.5f,    0.0f,  0.0f, -1.0f,     0.0f, 0.0f,
+        0.5f, -0.5f, -0.5f,     0.0f,  0.0f, -1.0f,     1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,     0.0f,  0.0f, -1.0f,     1.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,     0.0f,  0.0f, -1.0f,     1.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,    0.0f,  0.0f, -1.0f,     0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,    0.0f,  0.0f, -1.0f,     0.0f, 0.0f,
+
+        -0.5f, -0.5f,  0.5f,    0.0f,  0.0f, 1.0f,      0.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,     0.0f,  0.0f, 1.0f,      1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,     0.0f,  0.0f, 1.0f,      1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,     0.0f,  0.0f, 1.0f,      1.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,    0.0f,  0.0f, 1.0f,      0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,    0.0f,  0.0f, 1.0f,      0.0f, 0.0f,
+
+        -0.5f,  0.5f,  0.5f,    -1.0f,  0.0f,  0.0f,    1.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,    -1.0f,  0.0f,  0.0f,    1.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,    -1.0f,  0.0f,  0.0f,    0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,    -1.0f,  0.0f,  0.0f,    0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,    -1.0f,  0.0f,  0.0f,    0.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,    -1.0f,  0.0f,  0.0f,    1.0f, 0.0f,
+
+        0.5f,  0.5f,  0.5f,     1.0f,  0.0f,  0.0f,     1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,     1.0f,  0.0f,  0.0f,     1.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,     1.0f,  0.0f,  0.0f,     0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,     1.0f,  0.0f,  0.0f,     0.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,     1.0f,  0.0f,  0.0f,     0.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,     1.0f,  0.0f,  0.0f,     1.0f, 0.0f,
+
+        -0.5f, -0.5f, -0.5f,    0.0f, -1.0f,  0.0f,     0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,     0.0f, -1.0f,  0.0f,     1.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,     0.0f, -1.0f,  0.0f,     1.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,     0.0f, -1.0f,  0.0f,     1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,    0.0f, -1.0f,  0.0f,     0.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,    0.0f, -1.0f,  0.0f,     0.0f, 1.0f,
+
+        -0.5f,  0.5f, -0.5f,    0.0f,  1.0f,  0.0f,     0.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,     0.0f,  1.0f,  0.0f,     1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,     0.0f,  1.0f,  0.0f,     1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,     0.0f,  1.0f,  0.0f,     1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,    0.0f,  1.0f,  0.0f,     0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,    0.0f,  1.0f,  0.0f,     0.0f, 1.0f
     };
 
     unsigned int indices[] {
@@ -72,10 +122,10 @@ int main(void) {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     glBindVertexArray(VAO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*6, (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float)*8, (void*)0);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE,
-            sizeof(float)*6, (void*)(sizeof(float)*3));
+            sizeof(float)*8, (void*)(sizeof(float)*3));
     glEnableVertexAttribArray(1);
 
     glGenBuffers(1, &IBO);
@@ -94,20 +144,40 @@ int main(void) {
             (float)g_screenWidth/(float)g_screenHeight, 0.1f, 100.0f);
     shader.setUniformM4("projection", projection);
 
-    glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 5.0f);
-    glm::vec3 cameraForward = glm::vec3(0.0f, 0.0f, -1.0f);
-    glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-    view = glm::lookAt(cameraPos, cameraPos + cameraForward, cameraUp);
-    shader.setUniformM4("view", view);
+    // OBJECTS IN THE SCENE -------------------------------
+    DirLight light01;
+    // END OBJECTS IN THE SCENE ---------------------------
 
-    model = glm::rotate(model, glm::radians(45.0f), glm::vec3(1.0f, 1.0f, 0.0f));
-    shader.setUniformM4("model", model);
+    shader.setUniformV3("viewPos", g_cameraPos);
+    glm::vec3 ambientLight = glm::vec3(0.0215f, 0.1745f, 0.0215f);
+    shader.setUniformV3("material.ambient", ambientLight);
+    glm::vec3 diffuse = glm::vec3(0.07568f, 0.61424f, 0.07568f);
+    shader.setUniformV3("material.diffuse", diffuse);
+    glm::vec3 specular = glm::vec3(0.633f, 0.727811f, 0.633f);
+    shader.setUniformV3("material.specular", specular);
+    shader.setUniformF1("material.shininess", 32.0f);
+
+    shader.setUniformV3("dirLight.direction", light01.direction);
+    shader.setUniformV3("dirLight.ambient", light01.ambient);
+    shader.setUniformV3("dirLight.diffuse", light01.diffuse);
+    shader.setUniformV3("dirLight.specular", light01.specular);
 
     glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window)) {
+        float currentFrame = static_cast<float>(glfwGetTime());
+        g_deltaTime = currentFrame - g_lastFrame;
+        g_lastFrame = currentFrame;
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glDrawElements(GL_TRIANGLES, 3*12, GL_UNSIGNED_INT, nullptr);
+        view = glm::lookAt(g_cameraPos, g_cameraPos + g_cameraForward, g_cameraUp);
+        shader.setUniformM4("view", view);
+
+        model = glm::rotate(model, glm::radians(50.0f * g_deltaTime), glm::vec3(1.0f, 0.5f, 0.5f));
+        shader.setUniformM4("model", model);
+
+        //glDrawElements(GL_TRIANGLES, 3*12, GL_UNSIGNED_INT, nullptr);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

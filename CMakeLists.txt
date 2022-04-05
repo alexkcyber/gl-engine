@@ -10,7 +10,8 @@ project(gl-engine VERSION 0.0.1)
 add_executable(gl-engine
 	gl-engine.cpp
 	src/glad/glad.c
-	src/shader/shader.cpp)
+	src/shader/shader.cpp
+	src/lights/dirlight.cpp)
 
 find_package(glfw3 3.3 REQUIRED)
 target_link_libraries(gl-engine glfw)

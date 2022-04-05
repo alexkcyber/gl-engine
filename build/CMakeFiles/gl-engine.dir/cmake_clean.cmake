@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gl-engine.dir/gl-engine.cpp.o.d"
   "CMakeFiles/gl-engine.dir/src/glad/glad.c.o"
   "CMakeFiles/gl-engine.dir/src/glad/glad.c.o.d"
+  "CMakeFiles/gl-engine.dir/src/lights/dirlight.cpp.o"
+  "CMakeFiles/gl-engine.dir/src/lights/dirlight.cpp.o.d"
   "CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o"
   "CMakeFiles/gl-engine.dir/src/shader/shader.cpp.o.d"
   "gl-engine"

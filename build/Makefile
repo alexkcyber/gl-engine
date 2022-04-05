@@ -177,6 +177,30 @@ src/glad/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/glad/glad.c.s
 .PHONY : src/glad/glad.c.s
 
+src/lights/dirlight.o: src/lights/dirlight.cpp.o
+.PHONY : src/lights/dirlight.o
+
+# target to build an object file
+src/lights/dirlight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/lights/dirlight.cpp.o
+.PHONY : src/lights/dirlight.cpp.o
+
+src/lights/dirlight.i: src/lights/dirlight.cpp.i
+.PHONY : src/lights/dirlight.i
+
+# target to preprocess a source file
+src/lights/dirlight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/lights/dirlight.cpp.i
+.PHONY : src/lights/dirlight.cpp.i
+
+src/lights/dirlight.s: src/lights/dirlight.cpp.s
+.PHONY : src/lights/dirlight.s
+
+# target to generate assembly for a file
+src/lights/dirlight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gl-engine.dir/build.make CMakeFiles/gl-engine.dir/src/lights/dirlight.cpp.s
+.PHONY : src/lights/dirlight.cpp.s
+
 src/shader/shader.o: src/shader/shader.cpp.o
 .PHONY : src/shader/shader.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/glad/glad.o"
 	@echo "... src/glad/glad.i"
 	@echo "... src/glad/glad.s"
+	@echo "... src/lights/dirlight.o"
+	@echo "... src/lights/dirlight.i"
+	@echo "... src/lights/dirlight.s"
 	@echo "... src/shader/shader.o"
 	@echo "... src/shader/shader.i"
 	@echo "... src/shader/shader.s"

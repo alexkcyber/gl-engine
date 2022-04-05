@@ -18,6 +18,15 @@ class Shader {
         // matrix: 4x4 matrix
         void setUniformM4(const char* uniName, glm::mat4 &matrix);
 
+        // Sets a vec3 uniform in the shader
+        // uniName: String name of uniform
+        // vec: a vector 3
+        void setUniformV3(const char* uniName, glm::vec3 &vec);
+
+        // Sets a float uniform in the shader
+        // uniName: String name of uniform
+        // f: float number
+        void setUniformF1(const char* uniName, float f);
 
         // Link all of the shaders loaded into shaderProgram
         void linkProgram();
